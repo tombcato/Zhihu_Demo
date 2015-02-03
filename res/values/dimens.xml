@@ -1,0 +1,46 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    
+    
+    
+	<!-- Default screen margins, per the Android Design guidelines. -->
+	<dimen name="text_size_7">7sp</dimen>
+	<dimen name="text_size_12">12sp</dimen>
+	<dimen name="text_size_13">13sp</dimen>
+	<dimen name="text_size_14">14sp</dimen>
+	<dimen name="text_size_15">15sp</dimen>
+	<dimen name="text_size_16">16sp</dimen>
+	<dimen name="text_size_18">18sp</dimen>
+	<dimen name="text_size_22">22sp</dimen>
+	<dimen name="text_size_28">28sp</dimen>
+	<dimen name="text_size_30">30sp</dimen>
+	<dimen name="navigation_drawer_width">240dp</dimen>
+	<dimen name="drawer_user_avatar_width">90dp</dimen>
+	<dimen name="editor_avatar_width">40dp</dimen>
+	<dimen name="editor_avatar_small_width">30dp</dimen>
+	<dimen name="divider_height">1dp</dimen>
+	<dimen name="list_divider_height">1dp</dimen>
+	<dimen name="list_divider_height_16">16dp</dimen>
+	<dimen name="list_header_height">48dp</dimen>
+	<dimen name="bar_height">48dp</dimen>
+	<dimen name="subscribe_grid_divider_margin">16dp</dimen>
+	<dimen name="header_height">250dp</dimen>
+	<dimen name="header_logo_size">100dp</dimen>
+	<dimen name="activity_horizontal_margin">16dp</dimen>
+	<dimen name="activity_vertical_margin">16dp</dimen>
+	<dimen name="avatar_width_35">35dp</dimen>
+	<dimen name="comment_content_text_lineSpaceing">24sp</dimen>
+	<dimen name="list_item_text_size">18sp</dimen>
+	<dimen name="list_item_image_width">90dp</dimen>
+	<dimen name="list_item_image_height">72dp</dimen>
+	<dimen name="subscribe_unread_icon_width">48dp</dimen>
+	<dimen name="subscribe_unread_icon_height">48dp</dimen>
+	<dimen name="top_image_title_text_size">22sp</dimen>
+	<dimen name="top_image_height">215dp</dimen>
+	<dimen name="theme_list_image_title_padding">16dp</dimen>
+	<dimen name="theme_list_image_title_text_size">14sp</dimen>
+	<dimen name="widget_margin">8dp</dimen>
+</resources>

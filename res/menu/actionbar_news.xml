@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2011 Google Inc.
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+
+          http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+<menu 
+    xmlns:app="http://schemas.android.com/apk/res-auto" 
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!--  -->
+    <item
+        android:id="@+id/menu_item_news_share"
+        android:icon="@drawable/news_share"
+        app:showAsAction="always"
+        app:title="分享"
+        />
+    <item
+        android:id="@+id/menu_item_news_collect"
+        android:icon="@drawable/news_collect"
+        app:showAsAction="always"
+        app:title="收藏"/>
+    <item
+        android:id="@+id/menu_item_news_comment"
+        android:icon="@drawable/news_comment"
+        app:showAsAction="always|withText"
+        android:title="1"/>
+    <item
+        android:id="@+id/menu_item_news_vote"
+        android:icon="@drawable/news_vote"
+        app:showAsAction="always|withText"
+        app:title="2"/>
+
+</menu>

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.zhihu.daily.android.stickylistheaders.StickyListHeadersListView android:id="@id/subscribe_list_view" android:background="?listViewBackground" android:layout_width="fill_parent" android:layout_height="wrap_content" android:listSelector="?listViewBackground"
+  xmlns:android="http://schemas.android.com/apk/res/android" />

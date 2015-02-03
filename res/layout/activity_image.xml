@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    xmlns:app="http://schemas.android.com/apk/res/com.yx.zhihu">
+    <com.yx.zhihu.view.photoview.PhotoView
+        android:id="@+id/iv_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:scaleType="fitCenter"
+        />
+    <fr.castorflex.android.smoothprogressbar.SmoothProgressBar
+        android:id="@+id/spb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        app:spb_sections_count="4"
+	    app:spb_color="#FF0000"
+	    app:spb_speed="2.0"
+	    app:spb_stroke_width="4dp"
+	    app:spb_stroke_separator_length="4dp"
+	    app:spb_reversed="false"
+	    app:spb_mirror_mode="false"
+	    app:spb_progressiveStart_activated="true"
+	    app:spb_progressiveStart_speed="1.5"
+	    app:spb_progressiveStop_speed="3.4"
+	/>
+</RelativeLayout>

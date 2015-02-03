@@ -1,0 +1,240 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/white"
+	android:clickable="true">
+<!-- android:background="?attr/drawerBackgroundNormal" -->
+	<RelativeLayout
+		android:id="@+id/drawer_top"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:background="@drawable/menu_avatar_bg"
+		android:layout_alignParentTop="true">
+
+		<RelativeLayout
+			android:id="@+id/drawer_user"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="16dp"
+			android:paddingTop="13dp"
+			android:paddingBottom="15dp">
+
+			<com.yx.zhihu.view.CircleImageView
+				android:id="@+id/drawer_user_avatar"
+				android:layout_width="50dp"
+				android:layout_height="50dp"
+				android:layout_marginRight="13dp"
+				android:layout_centerVertical="true"
+				android:src="@drawable/menu_avatar" />
+
+			<TextView
+				android:id="@+id/drawer_user_name"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:maxWidth="96dp"
+				android:layout_toRightOf="@+id/drawer_user_avatar"
+				android:text="@string/drawer_user_default_name"
+				android:textSize="@dimen/text_size_15"
+				android:textColor="@color/white"
+				android:layout_centerVertical="true"
+				android:ellipsize="end"
+				android:maxLines="2" />
+
+			<ImageView
+				android:id="@+id/drawer_activity"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:src="@drawable/drawer_activity"
+				android:layout_marginLeft="146dp"
+				android:padding="16dp"
+				android:layout_centerVertical="true"
+				android:visibility="gone" />
+		</RelativeLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="16dp"
+			android:layout_below="@+id/drawer_user"
+			android:orientation="horizontal"
+			android:background="@color/drawer_top_bg">
+
+			<LinearLayout
+				android:id="@+id/drawer_favorite"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:paddingTop="13dp"
+				android:paddingBottom="13dp"
+				android:layout_weight="1"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/menu_collect" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="7dp"
+					android:text="@string/drawer_favorite"
+					android:textSize="@dimen/text_size_12"
+					android:textColor="@color/drawer_item_text_color2"
+					android:textStyle="bold" />
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/drawer_notification"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:paddingBottom="13dp"
+				android:layout_weight="1"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:paddingTop="13dp"
+					android:src="@drawable/menu_message" />
+
+				<RelativeLayout
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content">
+
+					<TextView
+						android:id="@+id/drawer_notification_text"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_marginTop="13dp"
+						android:layout_marginLeft="7dp"
+						android:text="@string/drawer_notification"
+						android:textSize="@dimen/text_size_12"
+						android:textColor="@color/drawer_item_text_color2"
+						android:textStyle="bold" />
+
+					<TextView
+						android:id="@+id/drawer_notification_count"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:layout_toRightOf="@+id/drawer_notification_text"
+						android:layout_marginLeft="-5dp"
+						android:layout_marginTop="8dp"
+						android:gravity="center"
+						android:textColor="@color/white"
+						android:textSize="@dimen/text_size_7"
+						android:background="@drawable/drawer_item_count"
+						android:visibility="gone" />
+				</RelativeLayout>
+			</LinearLayout>
+
+			<LinearLayout
+				android:id="@+id/drawer_setting"
+				android:layout_width="0dp"
+				android:layout_height="match_parent"
+				android:paddingTop="13dp"
+				android:paddingBottom="13dp"
+				android:layout_weight="1"
+				android:orientation="horizontal">
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:src="@drawable/menu_setting" />
+
+				<TextView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="7dp"
+					android:text="@string/drawer_settings"
+					android:textSize="@dimen/text_size_12"
+					android:textColor="@color/drawer_item_text_color2"
+					android:textStyle="bold" />
+			</LinearLayout>
+		</LinearLayout>
+
+	</RelativeLayout>
+
+	<ListView
+		android:id="@+id/drawer_list_view"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="start"
+		android:layout_below="@+id/drawer_top"
+		android:layout_above="@+id/drawer_bottom"
+		android:choiceMode="singleChoice"
+		android:scrollbars="none"
+		android:divider="@null"
+		android:dividerHeight="0dp" />
+
+	<RelativeLayout
+		android:id="@+id/drawer_bottom"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_alignParentBottom="true">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:orientation="horizontal">
+
+			<RelativeLayout
+				android:id="@+id/drawer_offline"
+				android:layout_width="100dp"
+				android:layout_height="match_parent"
+				android:paddingTop="16dp"
+				android:paddingLeft="16dp"
+				android:paddingBottom="16dp">
+
+				<ImageView
+					android:id="@+id/drawer_offline_image"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:layout_centerVertical="true"
+					android:src="@drawable/menu_download_highlight"
+					/>
+<!-- android:src="?attr/drawerDownloadButton"  -->
+				<TextView
+					android:id="@+id/drawer_offline_progress"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_toRightOf="@+id/drawer_offline_image"
+					android:layout_marginLeft="15dp"
+					android:layout_centerVertical="true"
+					android:text="@string/drawer_offline"
+					android:textSize="@dimen/text_size_15" />
+			</RelativeLayout>
+
+			<RelativeLayout
+				android:id="@+id/drawer_dark_mode"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:paddingTop="16dp"
+				android:paddingBottom="16dp"
+				android:paddingRight="40dp">
+
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_toLeftOf="@+id/drawer_dark_mode_text"
+					android:layout_centerVertical="true"
+					android:src="@drawable/menu_day_highlight"
+					/>
+<!-- android:src="?drawerSwitchDarkButton"  -->
+				<TextView
+					android:id="@+id/drawer_dark_mode_text"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginLeft="15dp"
+					android:layout_alignParentRight="true"
+					android:layout_centerVertical="true"
+					android:textSize="@dimen/text_size_15"
+					android:text="夜间" />
+<!-- android:text="?attr/drawerDarkModeText"  -->
+			</RelativeLayout>
+
+		</LinearLayout>
+
+	</RelativeLayout>
+
+</RelativeLayout>

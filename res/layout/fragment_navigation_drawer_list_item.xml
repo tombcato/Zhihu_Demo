@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:id="@+id/drawer_item_layout"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:background="@drawable/drawer_list_item_bg_light"
+	>
+<!-- android:background="?attr/drawerItemBackground" -->
+	<RelativeLayout
+		android:id="@+id/drawer_item_divider"
+		android:layout_width="match_parent"
+		android:layout_height="@dimen/divider_height"
+		android:background="@color/drawer_bg_highlight_light"
+		android:visibility="gone" />
+<!-- android:background="?attr/drawerBackgroundHighlight" -->
+	<RelativeLayout
+		android:layout_width="200dp"
+		android:layout_height="45dp"
+		android:paddingLeft="16dp">
+
+		<ImageView
+			android:id="@+id/drawer_item_logo"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginRight="10dp"
+			android:layout_centerVertical="true"
+			android:src="@drawable/menu_home" />
+
+		<TextView
+			android:id="@+id/drawer_item_title"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_toRightOf="@+id/drawer_item_logo"
+			android:layout_centerVertical="true"
+			android:text="@string/title_home"
+			android:textColor="@color/drawer_item_text_color_light"
+			android:textSize="@dimen/text_size_15" />
+<!-- android:textColor="?attr/drawerItemTextColor" -->
+		<ImageView
+			android:id="@+id/drawer_item_remind"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="28dp"
+			android:layout_toRightOf="@+id/drawer_item_title"
+			android:layout_centerVertical="true"
+			android:src="@drawable/remind"
+			android:visibility="visible" />
+
+		<ImageView
+			android:id="@+id/drawer_item_subscribe_button"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_alignParentRight="true"
+			android:paddingLeft="16dp"
+			android:paddingTop="16dp"
+			android:paddingBottom="16dp"
+			android:layout_centerVertical="true"
+			android:src="@drawable/menu_arrow" />
+
+	</RelativeLayout>
+</RelativeLayout>

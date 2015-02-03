@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="ab_transport">#00000000</color>
+    <!-- ActionBar -->
+    <color name="ab_background">#20B4F1</color>
+    <color name="ab_background_light">#00A2ED</color>
+    <color name="ab_title_light">#FFFFFF</color>
+    <color name="ab_title_dark">#FFFFFF</color>
+
+	<color name="activity_background_light">#FFFFFF</color>
+	<color name="activity_background_dark">#343434</color>
+
+	<color name="gray_2">#AFAFAF</color>
+	<color name="gray_1">#C0C0C0</color>
+	<color name="black">#000000</color>
+	<color name="white">#FFFFFF</color>
+    <color name="dark_slate_gray">#2F4F4F</color>
+
+    <color name="guide_bottom_bar_normal">#016aba</color>
+    <color name="guide_bottom_bar_highlight">#005a9f</color>
+
+    <color name="card_shadow">#8c666666</color>
+
+	<color name="text_color_black_light">#333333</color>
+	<color name="text_color_black_dark">#888888</color>
+	<color name="text_color_gray_light">#999999</color>
+	<color name="text_color_gray_dark">#646464</color>
+
+	<color name="background_gray_light">#fbfbfb</color>
+	<color name="background_gray_dark">#303030</color>
+
+	<color name="divider1_light">#f2f2f2</color>
+	<color name="divider1_dark">#2e2e2e</color>
+
+	<color name="drawer_item_text_color_light">#333333</color>
+	<color name="drawer_item_text_color_dark">#939393</color>
+	<color name="drawer_item_text_color2">#d1d1d1</color>
+	<color name="drawer_top_bg">#33000000</color>
+	<color name="drawer_bg_normal_light">#ffffff</color>
+	<color name="drawer_bg_normal_dark">#343434</color>
+	<color name="drawer_bg_highlight_light">#f0f0f0</color>
+	<color name="drawer_bg_highlight_dark">#2c2c2c</color>
+
+    <color name="list_item_title_light">#ff000000</color>
+    <color name="list_item_title_read_light">#ff777777</color>
+    <color name="list_item_title_dark">#fff3f3f3</color>
+    <color name="list_item_title_read_dark">#ff888888</color>
+
+    <color name="list_item_intro_light">#B7B7B7</color>
+    <color name="list_item_intro_dark">#696969</color>
+
+    <color name="list_item_extra_divider_light">#eaeaea</color>
+    <color name="list_item_extra_divider_dark">#393939</color>
+
+    <color name="list_item_extra_light">#028fd6</color>
+    <color name="list_item_extra_dark">#116f9e</color>
+
+    <color name="list_view_bg_light">#F3F3F3</color>
+    <color name="list_view_bg_dark">#343434</color>
+
+    <color name="list_item_bg_light_normal">#FFFFFF</color>
+    <color name="list_item_bg_light_highlight">#E9E9E9</color>
+    <color name="list_item_bg_dark_normal">#404040</color>
+    <color name="list_item_bg_dark_highlight">#393939</color>
+
+    <color name="navigation_divider_light">#cccccc</color>
+    <color name="navigation_divider_dark">#2a2a2a</color>
+
+    <color name="home_list_header_bg_light">#009dd7</color>
+    <color name="home_list_header_bg_dark">#444444</color>
+
+    <color name="list_view_divider">#E7E7E7</color>
+
+    <color name="news_tool_bar_bg_light">#F9F9F9</color>
+    <color name="news_tool_bar_bg_light_click">#5D5D5D</color>
+    <color name="news_tool_bar_bg_dark">#383838</color>
+    <color name="news_tool_bar_bg_dark_click">#888888</color>
+    <color name="news_tool_bar_theme_name_color_light">#0b6dd1</color>
+    <color name="news_tool_bar_theme_name_color_dark">#45b2ff</color>
+	
+	<color name="comment_header">#333333</color>
+	<color name="comment_header_dark">#B8B8B8</color>
+	<color name="comment_item_author_light">#000000</color>
+	<color name="comment_item_author_dark">#b6b6b6</color>
+	<color name="comment_item_content_light">#333333</color>
+    <color name="comment_item_content_dark">#7f7f7f</color>
+	<color name="comment_item_time">#b6b6b6</color>
+    <color name="comment_item_reply_comment_content_light">#767676</color>
+    <color name="comment_item_reply_comment_content_dark">#565656</color>
+    <color name="comment_item_reply_comment_extra_bg">#d8e4f4</color>
+    <color name="comment_item_prompt_message_light">#767676</color>
+    <color name="comment_item_prompt_message_dark">#565656</color>
+
+    <color name="comment_item_reply_prompt_message_light">#767676</color>
+    <color name="comment_item_reply_prompt_message_dark">#565656</color>
+    <color name="comment_item_reply_prompt_message_bg_light">#f6f6f6</color>
+    <color name="comment_item_reply_prompt_message_bg_dark">#313131</color>
+    <color name="comment_item_reply_expand_button_bg_light">#d8e4f4</color>
+    <color name="comment_item_reply_expand_button_bg_dark">#2b2b2b</color>
+
+    <color name="comment_replies_story_title_bg_light">#fbfbfb</color>
+    <color name="comment_replies_story_title_bg_dark">#fbfbfb</color>
+    <color name="comment_replies_story_title_light">#999999</color>
+    <color name="comment_replies_story_title_dark">#fbfbfb</color>
+    <color name="comment_replies_my_comment_text_light">#333333</color>
+    <color name="comment_replies_my_comment_text_dark">#b8b8b8</color>
+
+	<color name="comment_compose_text">#CECECE</color>
+
+	<color name="comment_no_comment_prompt_text">#e4e4e4</color>
+	<color name="comment_no_comment_prompt_text_dark">#505050</color>
+
+
+    <color name="theme_editor_name_light">#333333</color>
+    <color name="theme_editor_name_dark">#B8B8B8</color>
+    <color name="theme_editor_bio_light">#999999</color>
+    <color name="theme_editor_bio_dark">#6e6e6e</color>
+
+	<color name="user_weibo_unbind">#d8d8d8</color>
+    <color name="user_bind_tencent_weibo_text">#347FA6</color>
+    <color name="user_bind_sina_weibo_text">#BC543F</color>
+
+    <color name="user_logout_text_color_light">#cc0000</color>
+    <color name="user_logout_text_color_dark">#9f2929</color>
+
+    <color name="subscribe_theme_title_divider">#4dffffff</color>
+    <color name="subscribe_theme_mask_normal">#66000000</color>
+    <color name="subscribe_theme_mask_highlight">#99000000</color>
+
+    <color name="subscribe_button_background_light_highlight">#e6e6e6</color>
+    <color name="subscribe_button_background_light_normal">#ffffff</color>
+    <color name="subscribe_button_background_dark_highlight">#303030</color>
+    <color name="subscribe_button_background_dark_normal">#3E3E3E</color>
+    <color name="subscribe_button_unsubscribed_border_light">#00a2ed</color>
+    <color name="subscribe_button_unsubscribed_border_dark">#007cb6</color>
+    <color name="subscribe_button_subscribed_border_light">#666666</color>
+    <color name="subscribe_button_subscribed_border_dark">#707070</color>
+
+	<color name="bg_showcase">#AA000000</color>
+
+    <color name="divider">#E7E7E7</color>
+	
+</resources>

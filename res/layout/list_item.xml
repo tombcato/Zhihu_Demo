@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="wrap_content"
+	android:paddingLeft="12dp"
+	android:paddingRight="12dp"
+	android:minHeight="72dp"
+	android:descendantFocusability="blocksDescendants"
+	android:orientation="horizontal">
+<!-- android:background="?listItemBackground" -->
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:paddingTop="8dp"
+		android:background="@drawable/card_light"
+		android:orientation="vertical">
+
+		<RelativeLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingLeft="12dp"
+			android:paddingRight="12dp"
+			android:layout_marginBottom="14dp">
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_alignParentLeft="true"
+				android:layout_toLeftOf="@+id/list_item_image_layout"
+				android:orientation="vertical">
+
+				<TextView
+					android:id="@+id/list_item_title"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:textSize="@dimen/list_item_text_size"
+					android:textIsSelectable="false"
+					android:minLines="2"
+					android:maxLines="3"
+					android:ellipsize="end" />
+
+				<TextView
+					android:id="@+id/list_item_intro"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginTop="8dp"
+					android:layout_gravity="bottom|left"
+					android:textSize="@dimen/text_size_12"
+					android:textColor="@color/list_item_intro_light"
+					android:textIsSelectable="false" />
+<!-- android:textColor="?listItemIntroTextColor" -->
+			</LinearLayout>
+
+			<RelativeLayout
+				android:id="@+id/list_item_image_layout"
+				android:layout_width="@dimen/list_item_image_width"
+				android:layout_height="@dimen/list_item_image_height"
+				android:layout_alignParentRight="true">
+
+				<ImageView
+					android:id="@+id/list_item_image"
+					android:layout_width="match_parent"
+					android:layout_height="match_parent"
+					android:layout_marginLeft="8dp"
+					android:scaleType="centerCrop" />
+
+				<ImageView
+					android:id="@+id/list_item_multipic"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentBottom="true"
+					android:layout_alignParentRight="true"
+					android:src="@drawable/home_pic" />
+
+			</RelativeLayout>
+
+		</RelativeLayout>
+
+		<LinearLayout
+			android:id="@+id/list_item_extra"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:paddingBottom="14dp"
+			android:paddingLeft="12dp"
+			android:paddingRight="12dp"
+			android:orientation="vertical"
+			android:background="@drawable/list_item_extra_light"
+			>
+<!-- android:background="?listItemExtraBackground" -->
+			<View
+				android:layout_width="match_parent"
+				android:layout_height="@dimen/divider_height"
+				android:background="@color/list_item_extra_divider_light"
+				/>
+<!-- android:background="?listItemExtraDividerColor"  -->
+			<RelativeLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="14dp"
+				android:gravity="center_vertical">
+
+				<TextView
+					android:id="@+id/list_item_extra_text_choose_from"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentLeft="true"
+					android:text="@string/home_list_item_choose_from"
+					android:textSize="@dimen/text_size_12" />
+
+				<TextView
+					android:id="@+id/list_item_extra_text"
+					android:layout_toRightOf="@+id/list_item_extra_text_choose_from"
+					android:layout_marginLeft="3dp"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:textSize="@dimen/text_size_12"
+					android:textColor="@color/list_item_extra_light"
+					android:textIsSelectable="false" />
+<!-- android:textColor="?listItemExtraTextColor" -->
+				<ImageView
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_alignParentRight="true"
+					android:src="@drawable/home_arrow" />
+
+			</RelativeLayout>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</RelativeLayout>

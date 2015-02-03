@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@drawable/image_top_default">
+
+	<ImageView
+		android:id="@+id/topstory_image"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:scaleType="fitXY" />
+
+	<RelativeLayout
+	    android:id="@+id/topstroy_mask"
+	    android:layout_width="match_parent"
+		android:layout_height="match_parent" />
+
+	<TextView
+		android:id="@+id/topstory_title"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center_vertical"
+		android:layout_alignParentBottom="true"
+		android:layout_marginBottom="25dp"
+		android:layout_marginLeft="16dp"
+		android:layout_marginRight="16dp"
+		android:textIsSelectable="false"
+		android:textSize="@dimen/top_image_title_text_size"
+		android:textColor="@color/white"
+		android:clickable="false"
+		android:focusable="false"
+		android:shadowColor="@color/black"
+		android:shadowDx="0"
+		android:shadowDy="1"
+		android:shadowRadius="1" />
+
+</RelativeLayout>
