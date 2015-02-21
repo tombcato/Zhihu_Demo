@@ -84,7 +84,7 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 				StoryDetailEntity info  = (StoryDetailEntity)msg.obj;
 				Logger.e("msg", "loadUrl:" + info.getShare_url());
 //				processData(info);
-				NewsWidgets.get(currentPos).processData(info);
+//				NewsWidgets.get(currentPos).processData(info);
 				break;
 			case STORY_EXTRA_DONE:
 				StoryExtraEntity extra = (StoryExtraEntity) msg.obj;
@@ -109,7 +109,6 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 		setOverflowShowingAlways();
 		ids = getIntent().getStringArrayListExtra("ids");
 		position = getIntent().getIntExtra("position", 0);
-		
 		
 		initView();
 		initMenu();
@@ -157,13 +156,15 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 //		mViewPager.setCurrentItem(position);
 //		fragmentAdapter.notifyDataSetChanged();
 		myApiController = new MyApiController(this, this);
-		NewsWidgets = new ArrayList<NewsDetialWidget>();
-		for (int i = 0; i < ids.size(); i++) {
-			NewsDetialWidget newsDetail = new NewsDetialWidget(this);
-			NewsWidgets.add(newsDetail);
-		}
-		newsDetailAdapter = new NewsDetailAdapter(this, NewsWidgets);
-		mViewPager.setAdapter(newsDetailAdapter);
+//		NewsWidgets = new ArrayList<NewsDetialWidget>();
+//		for (int i = 0; i < ids.size(); i++) {
+//			NewsDetialWidget newsDetail = new NewsDetialWidget(this);
+//			NewsWidgets.add(newsDetail);
+//		}
+//		newsDetailAdapter = new NewsDetailAdapter(this, NewsWidgets);
+		SDF widgetsAdapter = new SDF(this, ids);
+		mViewPager.setAdapter(widgetsAdapter);
+//		mViewPager.setAdapter(newsDetailAdapter);
 		mViewPager.setOnPageChangeListener(this);
 		mViewPager.setCurrentItem(position);
 	}
@@ -362,7 +363,7 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 		isVoted = false;
 		updateCreateMenu();
 		
-		myApiController.getStoryDetailData(ApiConstant.resqCode_StoryDetail, id);
+//		myApiController.getStoryDetailData(ApiConstant.resqCode_StoryDetail, id);
 		myApiController.getStoryExtraData(ApiConstant.resqCode_StoryEXTRA, id);
 		
 	}

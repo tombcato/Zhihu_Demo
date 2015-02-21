@@ -40,7 +40,9 @@ public class APP extends Application {
 		//����Application
 		app = this;
 		//�����ʼ��Volley����
-		queue = Volley.newRequestQueue(getApplicationContext(), getExternalCacheDir());
+//		queue = Volley.newRequestQueue(getApplicationContext(), getExternalCacheDir());
+		
+		queue = Volley.newRequestQueue(getApplicationContext());
 		resolution = new ResolutionUtil(getApplicationContext());
 		//ȫ������ImageLoader
         initImageLoader(getApplicationContext());

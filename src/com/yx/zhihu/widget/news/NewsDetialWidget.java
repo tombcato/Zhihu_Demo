@@ -168,7 +168,7 @@ public class NewsDetialWidget extends RelativeLayout implements VolleyCallBack, 
 		Logger.e("msg", id+":id");
 		Toast.makeText(getContext(), id + ":", 0).show();
 		myApiController.getStoryDetailData(ApiConstant.resqCode_StoryDetail, id);
-		myApiController.getStoryExtraData(ApiConstant.resqCode_StoryEXTRA, id);
+//		myApiController.getStoryExtraData(ApiConstant.resqCode_StoryEXTRA, id);
 	}
 
 	private void setListener() {

@@ -162,6 +162,7 @@ public class HomeFragment extends BaseFragment implements VolleyCallBack, OnScro
 		}
 		if(pinnedLv.getHeaderViewsCount() > 0){
 			pinnedLv.removeHeaderView(homeHeadWidget);
+			homeHeadWidget = new HomeHeadWidget(getActivity());
 		}
 		homeHeadWidget.setData(top_stories);
 		pinnedLv.addHeaderView(homeHeadWidget);

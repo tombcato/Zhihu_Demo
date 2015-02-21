@@ -17,10 +17,6 @@ public class NewsScrollView extends ScrollView {
 		init();
 	}
 
-	public NewsScrollView(Context context, AttributeSet attrs,int defStyleAttr, int defStyleRes) {
-		super(context, attrs, defStyleAttr, defStyleRes);
-		init();
-	}
 
 	public NewsScrollView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);

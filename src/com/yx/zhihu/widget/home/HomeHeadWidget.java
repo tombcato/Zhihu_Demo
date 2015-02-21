@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Handler;
 import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
@@ -84,7 +85,6 @@ public class HomeHeadWidget extends RelativeLayout implements OnClickListener, O
 		mInflater = (LayoutInflater) getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
 		view = mInflater.inflate(R.layout.fragment_home_header, null);
 		
-		
 		addView(view);
 		initView();
 		setListener();
@@ -94,8 +94,9 @@ public class HomeHeadWidget extends RelativeLayout implements OnClickListener, O
 		viewLists = new ArrayList<View>();
 		topHead = (RelativeLayout) view.findViewById(R.id.topstory);
 		mViewPager = (ViewPager) view.findViewById(R.id.topstory_pager);
+//	    mIndicator = new CirclePageIndicator(getContext());
 		mIndicator = (CirclePageIndicator) view.findViewById(R.id.topstory_pager_indicator);
-		
+//	    mIndicator.
 		RelativeLayout.LayoutParams headParams = (LayoutParams) topHead.getLayoutParams();
 		headParams.height = APP.getApp().getResolution().px2dp2px(460, false);
 		
@@ -132,6 +133,7 @@ public class HomeHeadWidget extends RelativeLayout implements OnClickListener, O
 		ImageView iv_img = (ImageView) view_item.findViewById(R.id.topstory_image);
 		TextView tv_title = (TextView) view_item.findViewById(R.id.topstory_title);
 		RelativeLayout rl_mask = (RelativeLayout) view_item.findViewById(R.id.topstroy_mask);
+		rl_mask.setBackgroundColor(Color.parseColor("#55000000"));
 		iv_img.setScaleType(ScaleType.CENTER_CROP);
 		ImageLoader.getInstance().displayImage(topNews.get(i).getImage(), iv_img);
 		tv_title.setText(topNews.get(i).getTitle());

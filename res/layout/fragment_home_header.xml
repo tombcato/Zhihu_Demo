@@ -15,7 +15,7 @@
 	    android:id="@+id/rl_mask"
 	    android:layout_width="match_parent"
 	    android:layout_height="match_parent"
-	    android:background="@color/drawer_top_bg"/>
+	    android:background="@android:color/transparent"/>
     <com.yx.zhihu.view.customviewpager.indicator.CirclePageIndicator
         android:id="@+id/topstory_pager_indicator"
         android:layout_width="fill_parent"
