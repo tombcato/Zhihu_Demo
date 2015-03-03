@@ -1,18 +1,16 @@
 package com.yx.zhihu.activity;
 
 import java.lang.reflect.Field;
-import java.util.ArrayList;
 import java.util.List;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
-import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.ActionBar;
-import android.support.v7.widget.ShareActionProvider;
 import android.text.TextUtils;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
@@ -28,6 +26,7 @@ import android.view.ViewConfiguration;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.ImageView;
+import android.widget.ShareActionProvider;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -77,6 +76,7 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 	private List<NewsDetialWidget> NewsWidgets;
 	private NewsDetailAdapter newsDetailAdapter;
 	private MyApiController myApiController;
+	private ShareActionProvider mShareActionProvider;
 	private Handler mHandler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
@@ -177,13 +177,14 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 		menu_vote = menu.findItem(R.id.menu_item_news_vote);
 		menu_comment = menu.findItem(R.id.menu_item_news_comment);
 		MenuItem menu_share = menu.findItem(R.id.menu_item_news_share);
-		
+		mShareActionProvider = (ShareActionProvider)menu_share.getActionProvider();
 		menu_comment.setActionView(commentView);
 		menu_vote.setActionView(voteView);
 		
 		menu_comment.getActionView().setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
+				ActivityHelper.NewsToComment(NewsActivity.this,ids.get(currentPos));
 				Toast.makeText(getApplicationContext(), "comment", 0).show();
 			}
 		});
@@ -204,7 +205,7 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
-		case R.id.home:
+		case android.R.id.home:
 			finish();
 			return true;
 		case R.id.menu_item_news_share:
@@ -214,7 +215,7 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 					
 			break;
 		case R.id.menu_item_news_comment:
-			ActivityHelper.NewsToComment(this,ids.get(currentPos));
+			
 			break;
 		case R.id.menu_item_news_vote:
 			
@@ -223,6 +224,13 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 			break;
 		}
 		return super.onOptionsItemSelected(item);
+	}
+	
+	// Call to update the share intent
+	private void setShareIntent(Intent shareIntent) {
+	    if (mShareActionProvider != null) {
+	        mShareActionProvider.setShareIntent(shareIntent);
+	    }
 	}
 	
 	private void updateCreateMenu() {
@@ -440,7 +448,7 @@ public class NewsActivity extends BaseActivity implements OnPageChangeListener, 
 	@Override
 	public <T> void VolleyloadDone(int resqCode, T entity) {
 		if(entity == null){
-			Toast.makeText(this, "请求数据为空", 0).show();
+//			Toast.makeText(this, "请求数据为空", 0).show();
 			return;
 		}
 		Message msg = null;

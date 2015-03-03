@@ -1,6 +1,8 @@
 package com.yx.zhihu.fragment;
 
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.zip.Inflater;
 
@@ -48,6 +50,10 @@ import com.lidroid.xutils.bitmap.callback.BitmapLoadCallBack;
 import com.lidroid.xutils.bitmap.callback.BitmapLoadFrom;
 public class SuberFragment extends BaseFragment implements VolleyCallBack, OnRefreshListener, OnScrollListener, OnItemClickListener{
 	private static final int THEME_SUB_DOWN = 1;
+	private static final int THEME_SUB_UP = 2;
+	private static final int PULL_DOWN = 100;
+	private static final int PULL_UP = 200;
+	private static final int PULL_INIT = 300;
 	public static SuberFragment newInstance(int id) {
 		SuberFragment fragment = new SuberFragment();
         Bundle bundle = new Bundle();
@@ -64,6 +70,8 @@ public class SuberFragment extends BaseFragment implements VolleyCallBack, OnRef
 	private TextView tv_soucre;
 	private View head;
 	private BitmapUtils bitmapUtils;
+	private int refreshFlag = PULL_INIT;
+	
 	private Handler mHandler = new Handler(){
 		public void handleMessage(android.os.Message msg) {
 			switch (msg.what) {
@@ -71,9 +79,14 @@ public class SuberFragment extends BaseFragment implements VolleyCallBack, OnRef
 				ThemeSubEntity info = (ThemeSubEntity)msg.obj;
 				processData(info);
 				break;
-//			case THEME_SUB_BEFORE_DOWN:
-//				processBeforeData();
-//				break;
+			case THEME_SUB_UP:
+				ThemeSubEntity info2 = (ThemeSubEntity)msg.obj;
+				//TODO:添加数据
+				List<StoryEntity> temp = totalData.getStories();
+				temp.addAll(info2.getStories());
+				totalData.setStories(temp);
+				processData(totalData);
+				break;
 			}
 		}
 	};
@@ -82,6 +95,7 @@ public class SuberFragment extends BaseFragment implements VolleyCallBack, OnRef
 	private int id;
 	private List<StoryEntity> stories;
 	private ArrayList<ThemeEditerEntity> editors;
+	private ThemeSubEntity totalData;
 	
 	
 	@Override
@@ -134,6 +148,7 @@ public class SuberFragment extends BaseFragment implements VolleyCallBack, OnRef
 	}
 	@Override
 	public <T> void VolleyloadDone(int resqCode, T entity) {
+		refreshFlag = PULL_INIT;
 		if(entity == null){
 			return;
 		}
@@ -146,13 +161,22 @@ public class SuberFragment extends BaseFragment implements VolleyCallBack, OnRef
 			msg.what = THEME_SUB_DOWN;
 			mHandler.sendMessage(msg);
 			break;
-
+		case ApiConstant.resqCode_ThemeSubBefore:
+			ThemeSubEntity info2 = (ThemeSubEntity)entity;
+			Logger.e("msg", info2.toString()+":");
+			Message msg2 = new Message();
+			msg2.obj =  info2;
+			msg2.what = THEME_SUB_UP;
+			mHandler.sendMessage(msg2);
+			break;
 		default:
 			break;
 		}
 	}
 	public void processData(ThemeSubEntity info){
-		stories.clear();
+		this.totalData = info;
+		if(refreshFlag == PULL_DOWN)
+			stories.clear();
 		String headImg = info.getBackground();
 		String description = info.getDescription();
 		editors = info.getEditors();
@@ -195,6 +219,7 @@ public class SuberFragment extends BaseFragment implements VolleyCallBack, OnRef
 	}
 	@Override
 	public void onRefreshStarted(View view) {
+		refreshFlag = PULL_DOWN;
 		initSubThemeNews(id);
 	}
 	@Override
@@ -219,7 +244,8 @@ public class SuberFragment extends BaseFragment implements VolleyCallBack, OnRef
 		   } 
 	}
 	private void getBeforeData(String id) {
-		apiController.getSubThemeBefore(ApiConstant.resqCode_ThemeSubBefore, Integer.parseInt(id));
+		refreshFlag = PULL_UP;
+		apiController.getSubThemeBefore(ApiConstant.resqCode_ThemeSubBefore, this.id,Integer.parseInt(id));
 	}
 	@Override
 	public void onItemClick(AdapterView<?> arg0, View v, int position, long arg3) {

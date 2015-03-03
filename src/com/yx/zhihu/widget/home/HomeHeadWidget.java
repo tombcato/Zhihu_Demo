@@ -135,7 +135,8 @@ public class HomeHeadWidget extends RelativeLayout implements OnClickListener, O
 		RelativeLayout rl_mask = (RelativeLayout) view_item.findViewById(R.id.topstroy_mask);
 		rl_mask.setBackgroundColor(Color.parseColor("#55000000"));
 		iv_img.setScaleType(ScaleType.CENTER_CROP);
-		ImageLoader.getInstance().displayImage(topNews.get(i).getImage(), iv_img);
+//		ImageLoader.getInstance().displayImage(topNews.get(i).getImage(), iv_img);
+		ImageLoader.getInstance().displayImage(topNews.get(i).getImage(), iv_img, APP.getApp().getDefalutOptions());
 		tv_title.setText(topNews.get(i).getTitle());
 		view_item.setTag(i);
 		view_item.setOnClickListener(this);
@@ -192,8 +193,7 @@ public class HomeHeadWidget extends RelativeLayout implements OnClickListener, O
 
 	@Override
 	public void onPageSelected(int arg0) {
-		Toast.makeText(getContext(), "sec :" + arg0, 0).show();
-		
+//		Toast.makeText(getContext(), "sec :" + arg0, 0).show();
 		mHandler.sendEmptyMessageDelayed(FINISH, CHANGE_TIME);
 	}
 	@Override

@@ -57,18 +57,18 @@ public interface ApiConstant {
 	/**
 	 * /api/3/editor/71/profile-page/android
 	 */
-	String API_EDITOR_INFO = STORY_SERVER + "/editor/%s/profile-page/android";
+	String API_EDITOR_INFO = STORY_SERVER + "editor/%s/profile-page/android";
 	
 	/**
 	 * /api/3/story/4465567/long-comments
 	 */
-	String API_COMMENTS_LONG_DATA = STORY_SERVER + "/story/%s/long-comments";
+	String API_COMMENTS_LONG_DATA = STORY_SERVER + "story/%s/long-comments";
 	
 	
 	/**
 	 * /api/3/story/4465494/short-comments
 	 */
-	String API_COMMENTS_SHORT_DATA = STORY_SERVER + "/story/%s/short-comments";
+	String API_COMMENTS_SHORT_DATA = STORY_SERVER + "story/%s/short-comments";
 	
 	/**
 	 * /api/3/vote/story/4465494		
@@ -87,14 +87,6 @@ public interface ApiConstant {
 	int resqCode_ThemeSubBefore = 18;
 //	int resqCode_splash = 10;
 	int resqCode_homeFocus = 1;
-
-	
-
-	
-	
-	
-	
-	
 	
 	
 }

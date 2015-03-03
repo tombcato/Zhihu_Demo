@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <lint>
     <issue id="HandlerLeak">
-        <ignore path="src\com\yx\zhihu\fragment\HomeFragment.java" />
+        <ignore path="src/com/yx/zhihu/fragment/HomeFragment.java" />
     </issue>
     <issue id="NewApi">
         <ignore path="src/com/happy/happyFrame/view/customviewpager/ViewPagerCompat.java" />
-        <ignore path="src\com\happy\happyFrame\view\customviewpager\ViewPagerCompat.java" />
-        <ignore path="src\com\yx\zhihu\view\customviewpager\ViewPagerCompat.java" />
+        <ignore path="src/com/happy/happyFrame/view/customviewpager/ViewPagerCompat.java" />
+        <ignore path="src/com/yx/zhihu/activity/NewsActivity.java" />
+        <ignore path="src/com/yx/zhihu/view/customviewpager/ViewPagerCompat.java" />
     </issue>
 </lint>

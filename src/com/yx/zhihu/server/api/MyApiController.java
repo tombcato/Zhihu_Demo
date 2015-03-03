@@ -46,8 +46,8 @@ public class MyApiController {
 		String url = String.format(ApiConstant.API_SUBTHEME_DATA,id);
 		myVolley.volleyGet(requestCode, url, ThemeSubEntity.class, CacheRequestFlag);
 	}
-	public void getSubThemeBefore(int requestCode, int id){
-		String url = String.format(ApiConstant.API_SUBTHEME_BEFORE_DATA,id);
+	public void getSubThemeBefore(int requestCode, int themeId,int id){
+		String url = String.format(ApiConstant.API_SUBTHEME_BEFORE_DATA,themeId,id);
 		myVolley.volleyGet(requestCode, url, ThemeSubEntity.class, CacheRequestFlag);
 	}
 	public void getAddSubTheme(int requestCode,int id) {

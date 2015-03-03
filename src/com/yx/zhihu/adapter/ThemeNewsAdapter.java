@@ -101,7 +101,7 @@ public class ThemeNewsAdapter extends BaseLvAdapter<StoryEntity> {
 			}
 		}else{
 			//正文 主题新闻
-			StoryEntity story = lists.get(position);
+			StoryEntity story = lists.get(position - 1);
 			String image = null;
 			if(story.getImages()!=null && story.getImages().size()>0){
 				image =  story.getImages().get(0);

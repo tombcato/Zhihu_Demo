@@ -24,7 +24,7 @@
         android:icon="@drawable/news_share"
         app:showAsAction="always"
         app:title="分享"
-        />
+        android:actionProviderClass="android.widget.ShareActionProvider"/>
     <item
         android:id="@+id/menu_item_news_collect"
         android:icon="@drawable/news_collect"

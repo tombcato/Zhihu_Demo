@@ -16,6 +16,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.yx.zhihu.entity.DrawerEntity;
+import com.yx.zhihu.utils.Network;
 import com.yx.zhihu.utils.ResolutionUtil;
 import com.yx.zhihu.utils.Toastor;
 
@@ -42,7 +43,7 @@ public class APP extends Application {
 		//�����ʼ��Volley����
 //		queue = Volley.newRequestQueue(getApplicationContext(), getExternalCacheDir());
 		
-		queue = Volley.newRequestQueue(getApplicationContext());
+		queue = Volley.newRequestQueue(getApplicationContext(),1024 * 1024 * 100);
 		resolution = new ResolutionUtil(getApplicationContext());
 		//ȫ������ImageLoader
         initImageLoader(getApplicationContext());
@@ -111,7 +112,9 @@ public class APP extends Application {
 		return mInflate;
 	}
 	
-    
+    public boolean isNetConnect(){
+    	return Network.isConnected(this);
+    }
     
 	
 }

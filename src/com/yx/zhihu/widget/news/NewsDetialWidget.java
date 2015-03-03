@@ -1,5 +1,10 @@
 package com.yx.zhihu.widget.news;
 
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
 import uk.co.senab.actionbarpulltorefresh.extras.actionbarcompat.PullToRefreshLayout;
 import uk.co.senab.actionbarpulltorefresh.library.ActionBarPullToRefresh;
 import uk.co.senab.actionbarpulltorefresh.library.listeners.OnRefreshListener;
@@ -212,10 +217,34 @@ public class NewsDetialWidget extends RelativeLayout implements VolleyCallBack, 
 		tv_source.setText(info.getImage_source());
 		
 		String html = AssetsUtils.loadText(getContext(), AppConstant.TEMPLATE_DEF_URL);
-		html = html.replace("{content}", info.getBody());
+		html = html.replace("{content}", info.getBody() + "");
 		html = html.replace("{nightTheme}","false");
+		html = replaceImgTagFromHTML(html);
 		
 		mWebView.loadDataWithBaseURL(null, html, "text/html", "UTF-8", null);
+	}
+	
+	/**
+	 * 替换html中的<img标签的属性
+	 * 添加点击事件
+	 * @param html
+	 * @return
+	 */
+	private String replaceImgTagFromHTML(String html) {
+		
+		Document doc = Jsoup.parse(html);
+
+		Elements es = doc.getElementsByTag("img");
+
+		for (Element e : es) {
+			
+			String imgUrl = e.attr("src");
+			
+			if (!e.attr("class").equals("avatar") ) {
+				e.attr("onclick", "openImage('" + imgUrl + "')");
+			}
+		}
+		return doc.html();
 	}
 	
 	@JavascriptInterface

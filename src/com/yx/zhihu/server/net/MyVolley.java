@@ -93,7 +93,7 @@ public class MyVolley {
 //		getRequest.setRetryPolicy(new DefaultRetryPolicy(8 * 1000, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 //		queue.add(getRequest);
 //	}
-	public <T> void volleyGet(final int requestCode,String url, final Class<T> cls,boolean isCacheRequest) {
+	public <T> void volleyGet(final int requestCode,String url, final Class<T> cls,final boolean isCacheRequest) {
 		Logger.e(TAG, "request: " + url);
 		JsonObjectRequest getRequest = new JsonObjectRequest(url, null, new Response.Listener<JSONObject>() {
 
@@ -119,15 +119,13 @@ public class MyVolley {
 			@Override
 			public void onErrorResponse(VolleyError error) {
 				Logger.e(TAG, error.getMessage());
+				mCallBack.VolleyloadDone(requestCode, null);
 			}
 		}){
-
 			@Override
-			protected Response<JSONObject> parseNetworkResponse(
-					NetworkResponse response) {
+			protected Response<JSONObject> parseNetworkResponse(NetworkResponse response) {
 				try {
-		            String jsonString =
-		                new String(response.data, HttpHeaderParser.parseCharset(response.headers));
+		            String jsonString = new String(response.data, HttpHeaderParser.parseCharset(response.headers));
 		            return Response.success(new JSONObject(jsonString),CustomHttpHeaderParser.parseCacheHeaders(response,1000*60*60*24*7));
 		        } catch (UnsupportedEncodingException e) {
 		            return Response.error(new ParseError(e));
@@ -135,9 +133,8 @@ public class MyVolley {
 		            return Response.error(new ParseError(je));
 		        }
 			}
-			
 		};
-		
+//		getRequest.set
 		getRequest.setShouldCache(isCacheRequest);
 		getRequest.setRetryPolicy(new DefaultRetryPolicy(8 * 1000, 3, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
 		queue.add(getRequest);

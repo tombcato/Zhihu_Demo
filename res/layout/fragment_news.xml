@@ -35,7 +35,11 @@
                         android:layout_height="fill_parent"
                         android:scaleType="centerCrop" />
                     <!-- <View android:id="@+id/news_image_mask" android:background="?bigImageMask" android:layout_width="fill_parent" android:layout_height="fill_parent" /> -->
-
+					<RelativeLayout 
+					    android:id="@+id/rl_mask"
+					    android:layout_width="match_parent"
+					    android:layout_height="match_parent"
+					    android:background="#55000000"/>
                     <TextView
                         android:id="@+id/news_title"
                         android:layout_width="fill_parent"

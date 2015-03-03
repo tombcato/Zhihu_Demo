@@ -83,6 +83,7 @@ public class MainActivity extends BaseActivity implements VolleyCallBack{
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
+	  
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
@@ -328,6 +329,7 @@ public class MainActivity extends BaseActivity implements VolleyCallBack{
 		void onSettingClick();
 		void onCollectionClick();
 	}
+	
 	public void toSubNews(int theme_id) {
 		FragmentTransaction ftt = mFragmentManager.beginTransaction();
 		mSubNews = SuberFragment.newInstance(theme_id);

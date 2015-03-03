@@ -5,6 +5,8 @@ import com.yx.zhihu.common.ApiConstant;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.view.MenuItem;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.webkit.WebChromeClient;
@@ -35,6 +37,11 @@ public class EditorActivity extends BaseActivity {
 	}
 
 	private void initView() {
+		ActionBar mActionBar = getSupportActionBar();
+		mActionBar.setTitle("详细资料");
+		mActionBar.setDisplayHomeAsUpEnabled(true);
+		mActionBar.setHomeButtonEnabled(true);
+		
 		mWebView.setWebViewClient(new WebViewClient(){
 			@Override
     		public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -51,5 +58,17 @@ public class EditorActivity extends BaseActivity {
         settings.setBuiltInZoomControls(false);
         settings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         settings.setJavaScriptCanOpenWindowsAutomatically(true);
+	}
+	
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case android.R.id.home:
+			finish();
+			return true;
+		default:
+			break;
+		}
+		return super.onOptionsItemSelected(item);
 	}
 }
